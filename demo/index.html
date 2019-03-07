@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deroute</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css" />
+    <link rel="stylesheet" href="../source/deroute.css" />
+    <script src="../source/deroute.js"></script>
+    <script>
+      Router.register((match, root, any) => {
+        root('#cars');
+
+        any(function(url, e) {
+          Array.from(document.querySelectorAll('.navbar .nav-item')).forEach(item => {
+            var link = item.querySelector('.nav-link');
+            var hash = new URL(link.href).hash;
+            if(hash === url.hash) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active');
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <main class="container">
+      <nav class="navbar navbar-dark bg-primary navbar-expand">
+        <h1 class="navbar-brand mb-0 h1">Transportation</h1>
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item">
+            <a class="nav-link" href="#cars">Cars</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#planes">Planes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#trains">Trains</a>
+          </li>
+        </ul>
+      </nav>
+      <article id="cars" data-view>
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Cars</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Honda_Civic">Honda Civic</a></li>
+                <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Chevrolet_Corvette">Chevrolet Corvette</a></li>
+                <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Dodge_Viper">Dodge Viper</a></li>
+                <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Tesla_Model_S">Tesla Model S</a></li>
+                <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Subaru_Impreza">Subaru Impreza</a></li>
+                <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Mazda3">Mazda3</a></li>
+              </ul>
+          </div>
+        </div>
+      </article>
+      <article id="planes" data-view>
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Planes</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <ul class="list-group">
+              <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Airbus_A220">Airbus A220</a></li>
+              <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Airbus_A330">Airbus A330</a></li>
+              <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Airbus_A380">Airbus A380</a></li>
+              <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Boeing_737">Boeing 737</a></li>
+              <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Boeing_747">Boeing 747</a></li>
+              <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Boeing_777">Boeing 777</a></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article id="trains" data-view>
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Trains</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <ul class="list-group">
+              <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Shinkansen">Shinkansen</a></li>
+              <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Washington_Metro_rolling_stock">7000 Series</a></li>
+              <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Acela_Express">Acela</a></li>
+              <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Siemens_Charger">Siemens Charger</a></li>
+              <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/ICE_4_(Deutsche_Bahn)">Ice 4</a></li>
+              <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/British_Rail_Class_374">British Rail Class 374</a></li>
+            </ul>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

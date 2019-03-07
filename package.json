@@ -1,0 +1,38 @@
+{
+  "name": "deroute",
+  "version": "0.0.2",
+  "description": "Micro client side router",
+  "main": "source/deroute.js",
+  "files": [ "source/deroute.js", "source/deroute.css" ],
+  "browser": {
+    "deroute": "source/deroute.js",
+    "deroute.css": "source/deroute.css"
+  },
+  "scripts": {
+    "test": "NODE_PATH=source:test $(npm bin)/karma start --single-run",
+    "test:watch": "NODE_PATH=source:test $(npm bin)/karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrishalebarnes/deroute.git"
+  },
+  "keywords": [ "router", "javascript", "js", "browser" ],
+  "author": "Chris Barnes",
+  "license": "MIT",
+  "bugs": { "url": "https://github.com/chrishalebarnes/deroute/issues" },
+  "homepage": "https://github.com/chrishalebarnes/deroute#readme",
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "chai": "^4.2.0",
+    "karma": "^4.0.0",
+    "karma-browserify": "^6.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^2.0.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-source-map-support": "^1.4.0",
+    "mocha": "^5.2.0",
+    "watchify": "^3.11.1"
+  }
+}
